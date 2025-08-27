@@ -1,0 +1,35 @@
+services:
+  fractional-backend:
+    image: localhost/fractional-backend:0.1
+    environment:
+      - "DATABASE_URL=postgresql://fractional:fractional@db:5432/fractional"
+      - "DEBUG=${DEBUG}"
+      - "INITIALIZE_DB=${INITIALIZE_DB}"
+    ports:
+      - "8000:8000"
+    networks:
+      fractional: {}
+    depends_on:
+      - db
+  db:
+    image: postgres:17.6-alpine
+    platform: linux/amd64
+    environment:
+      POSTGRES_USER: fractional
+      POSTGRES_DB: fractional
+      POSTGRES_PASSWORD: fractional
+    ports:
+      - "127.0.0.1:5432:5432"
+    networks:
+      fractional: {}
+  frontend:
+    image: localhost/fractional-frontend:0.1
+    platform: linux/amd64
+    ports:
+      - "127.0.0.1:5173:5173"
+    networks:
+      fractional: {}
+    depends_on:
+      - backend
+networks:
+  fractional: {}

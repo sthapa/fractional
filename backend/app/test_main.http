@@ -1,0 +1,64 @@
+# Test your FastAPI endpoints
+
+GET http://127.0.0.1:8000/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/players
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/player/1
+Accept: application/json
+
+{
+  "id": 1,
+  "name": "B Bonds",
+  "position": "LF",
+  "games": 2986,
+  "at_bats": 9847,
+  "runs": 2227,
+  "hits": 2935,
+  "doubles": 601,
+  "triples": 77,
+  "home_runs": 762,
+  "rbi": 1996,
+  "walks": 2558,
+  "strikeouts": 1539,
+  "stolen_bases": 514,
+  "caught_stealing": 141,
+  "avg": 0.298,
+  "obp": 0.444,
+  "slugging": 0.607,
+  "ops": 1.051
+}
+
+###
+POST http://127.0.0.1:8000/player/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "B Bonds 2",
+  "position": "LF",
+  "games": 2986,
+  "at_bats": 9847,
+  "runs": 2227,
+  "hits": 2935,
+  "doubles": 601,
+  "triples": 77,
+  "home_runs": 762,
+  "rbi": 1996,
+  "walks": 2558,
+  "strikeouts": 1539,
+  "stolen_bases": 514,
+  "caught_stealing": 141,
+  "avg": 0.298,
+  "obp": 0.444,
+  "slugging": 0.607,
+  "ops": 1.051
+}
+
+
