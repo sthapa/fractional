@@ -26,10 +26,8 @@ services:
     image: localhost/fractional-frontend:0.1
     platform: linux/amd64
     ports:
-      - "127.0.0.1:5173:5173"
+      - "5173:5173"
     networks:
       fractional: {}
-    depends_on:
-      - backend
 networks:
   fractional: {}

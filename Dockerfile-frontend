@@ -8,7 +8,7 @@ WORKDIR /app/fractional
 COPY frontend /app/fractional
 
 # install project dependencies
-#RUN npm install
+RUN npm install
 
 
 # build app for production with minification
@@ -18,4 +18,3 @@ EXPOSE 5173
 #ENTRYPOINT  ["/bin/sleep", "3600"]
 ENTRYPOINT  ["/usr/local/bin/npm", "run", "dev"]
 
-#CMD [ "http-server", "dist" ]

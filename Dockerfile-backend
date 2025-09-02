@@ -23,7 +23,7 @@ ENV PATH="/root/.local/bin/:$PATH"
 
 COPY /backend/app/* /srv/fastapi
 RUN mkdir /srv/fastapi/data
-COPY /backend/scripts/players.json /srv/fastapi/data/
+COPY /backend/scripts/players-desc.json /srv/fastapi/data/players.json
 WORKDIR /srv/fastapi
 RUN  uv sync --frozen --no-install-project
 
